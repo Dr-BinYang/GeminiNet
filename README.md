@@ -1,5 +1,7 @@
 # GeminiNet
 
+> **⚠️ Naming Note:** *GeminiNet* refers to the "twin" relationship between image and numerical modalities in multimodal forecasting, inspired by the Gemini constellation. **It is unrelated to Google's Gemini large language models.**
+
 GeminiNet is a multimodal forecasting framework for paired visual and numerical time series. Two unimodal predictors first estimate modality-specific evolutionary tendencies. The main network then conditions historical observations on those tendencies, estimates their reliability, performs cross-modal interaction, and forecasts both future modalities.
 
 ## Dataset projects
@@ -31,6 +33,3 @@ python run.py
 
 All runners support command-line overrides. Boolean options use paired flags such as `--train_gemininet` and `--no-train_gemininet`.
 
-## Repository contents
-
-The public repository contains source code and data preparation utilities only. Raw data, processed arrays, trained weights, logs, metrics, visualizations, and other experiment outputs are excluded through `.gitignore`.
