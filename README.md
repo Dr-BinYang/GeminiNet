@@ -19,6 +19,98 @@ Each directory is a self-contained experiment with the same model family and a d
 
 The centralized [Datasets](Datasets/README.md) directory provides dataset download and preprocessing workflows.
 
+
+## Repository Structure
+
+```text
+GeminiNet/
+├── Bair-Robot-Pushing/
+├── ECMWF-ERA5/
+├── KTH-Action/
+├── MeteoNet-NW/
+├── Moving-MNIST/
+├── NOAA-GOES16/
+├── SEVIR-IR107/
+├── UTD-MHAD/
+│
+├── Datasets/
+│   ├── Bair-Robot-Pushing/
+│   ├── ECMWF-ERA5/
+│   ├── KTH-Action/
+│   ├── MeteoNet-NW/
+│   ├── Moving-MNIST/
+│   ├── NOAA-GOES16/
+│   ├── SEVIR-IR107/
+│   ├── UTD-MHAD/
+│   └── README.md
+│
+└── README.md
+```
+
+Each dataset project is self-contained and follows a consistent structure:
+
+```text
+<dataset-project>/
+├── data_provider/
+│   ├── __init__.py
+│   ├── <dataset-specific-loader>.py
+│   └── normalizer.py
+│
+├── datasets/
+│   ├── README.md
+│   ├── download.py
+│   └── preprocess.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── encoders.py
+│   ├── gemininet.py
+│   ├── heads.py
+│   ├── interaction.py
+│   ├── reliability.py
+│   └── unimodal.py
+│
+├── plot/
+│   ├── plot_metrics.py
+│   └── plot_training_overview.py
+│
+├── scripts/
+│   └── <dataset-specific-script>.py
+│
+├── utils/
+│   ├── __init__.py
+│   ├── auto_plot.py
+│   ├── checkpoint.py
+│   ├── common.py
+│   ├── logger.py
+│   ├── metrics.py
+│   ├── model_summary.py
+│   └── visualization.py
+│
+├── README.md
+├── requirements.txt
+├── run.py
+└── trainer.py
+```
+
+The main directories serve the following purposes:
+
+| Directory / File | Description |
+|---|---|
+| `data_provider/` | Dataset-specific data loading and normalization |
+| `datasets/` | Dataset download and preprocessing utilities |
+| `models/` | GeminiNet architecture and model components |
+| `plot/` | Training and evaluation visualization |
+| `scripts/` | Dataset-specific preprocessing and preparation scripts |
+| `utils/` | Training utilities, checkpoint management, metrics, and visualization |
+| `trainer.py` | Model training and evaluation workflow |
+| `run.py` | Main experiment entry point |
+| `requirements.txt` | Project dependencies |
+| `README.md` | Dataset-specific documentation |
+
+The `Datasets/` directory centralizes dataset download and preprocessing resources, while each dataset project maintains its own implementation, configuration, and execution pipeline.
+
+
 ## Usage
 
 Choose a subproject and install its dependencies:
