@@ -4,22 +4,6 @@
 
 GeminiNet is a multimodal forecasting framework for paired visual and numerical time series. Two unimodal predictors first estimate modality-specific evolutionary tendencies. The main network then conditions historical observations on those tendencies, estimates their reliability, performs cross-modal interaction, and forecasts both future modalities.
 
-## Dataset projects
-
-Each directory is a self-contained experiment with the same model family and a dataset-specific input pipeline.
-
-- `Moving-MNIST`
-- `Bair-Robot-Pushing`
-- `UTD-MHAD`
-- `KTH-Action`
-- `MeteoNet-NW`
-- `ECMWF-ERA5`
-- `NOAA-GOES16`
-- `SEVIR-IR107`
-
-The centralized [Datasets](Datasets/README.md) directory provides dataset download and preprocessing workflows.
-
-
 ## Repository Structure
 
 ```text
@@ -109,6 +93,22 @@ The main directories serve the following purposes:
 | `README.md` | Dataset-specific documentation |
 
 The `Datasets/` directory centralizes dataset download and preprocessing resources, while each dataset project maintains its own implementation, configuration, and execution pipeline.
+
+## Dataset projects
+
+Each directory is a self-contained experiment with the same model family and a dataset-specific input pipeline.
+
+- `Moving-MNIST`
+- `Bair-Robot-Pushing`
+- `UTD-MHAD`
+- `KTH-Action`
+- `MeteoNet-NW`
+- `ECMWF-ERA5`
+- `NOAA-GOES16`
+- `SEVIR-IR107`
+
+The centralized [Datasets](Datasets/README.md) directory provides dataset download and preprocessing workflows.
+
 
 
 ## Usage
